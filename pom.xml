@@ -13,6 +13,7 @@
         <module>stankin-view-parent</module>
         <module>stankin-view-api</module>
         <module>stankin-view-service</module>
+        <module>stankin-view-model</module>
     </modules>
 
     <properties>
