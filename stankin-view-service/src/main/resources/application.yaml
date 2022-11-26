@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /navigator
+
+spring:
+  application:
+    name: stankin-view
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=stankin_view
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
