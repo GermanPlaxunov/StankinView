@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="stankin-view-api" />
         <module name="stankin-view-service" />
+        <module name="stankin-view-model" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,8 +1,12 @@
 package com.proggersofluck.stankinviewservice.rest;
 
+import com.proggersofluck.stankinviewservice.process.RequestProcessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.proggersofluck.model.request.PathRequest;
+import org.proggersofluck.model.response.PreparedPath;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
@@ -10,9 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AppController {
 
-    @GetMapping(path = "/doSomeStuff")
-    public void doSomeStuff(){
-        log.info("STUFF");
+    private final RequestProcessor processor;
+
+    @PostMapping(path = "/savePath")
+    public void savePath(){
+
+    }
+
+    @PostMapping(path = "/getPath")
+    public PreparedPath getPathToCoordinates(@RequestBody PathRequest request) {
+        return processor.process(request);
     }
 
 }
