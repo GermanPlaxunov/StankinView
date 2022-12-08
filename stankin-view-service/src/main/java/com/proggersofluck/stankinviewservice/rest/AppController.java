@@ -16,11 +16,6 @@ public class AppController {
 
     private final RequestProcessor processor;
 
-    @PostMapping(path = "/savePath")
-    public void savePath(){
-
-    }
-
     @PostMapping(path = "/getPath")
     public PreparedPath getPathToCoordinates(@RequestBody PathRequest request) {
         return processor.process(request);

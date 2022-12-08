@@ -1,22 +1,22 @@
 package com.proggersofluck.stankinviewservice.config;
 
 import com.proggersofluck.stankinviewservice.builder.PathBuilder;
-import com.proggersofluck.stankinviewservice.data.repo.StairRepository;
-import com.proggersofluck.stankinviewservice.data.service.classes.StairServiceImpl;
-import com.proggersofluck.stankinviewservice.data.service.interfaces.StairService;
+import com.proggersofluck.stankinviewservice.data.repo.NavigationPointRepository;
+import com.proggersofluck.stankinviewservice.data.service.classes.NavigationPointServiceImpl;
+import com.proggersofluck.stankinviewservice.data.service.interfaces.NavigationPointService;
 import com.proggersofluck.stankinviewservice.process.RequestProcessor;
-import com.proggersofluck.stankinviewservice.provider.StairProvider;
+import com.proggersofluck.stankinviewservice.provider.NavigationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EnableJpaRepositories(basePackageClasses = {StairRepository.class})
+@EnableJpaRepositories(basePackageClasses = {NavigationPointRepository.class})
 public class AppBeansConfig {
 
     @Bean
-    public StairService stairService(StairRepository repository){
-        return new StairServiceImpl(repository);
+    public NavigationPointService navigationPointService(NavigationPointRepository repository){
+        return new NavigationPointServiceImpl(repository);
     }
 
     @Bean
@@ -25,12 +25,12 @@ public class AppBeansConfig {
     }
 
     @Bean
-    public PathBuilder pathBuilder(StairProvider stairProvider){
-        return new PathBuilder(stairProvider);
+    public PathBuilder pathBuilder(NavigationProvider provider){
+        return new PathBuilder(provider);
     }
 
     @Bean
-    public StairProvider stairProvider(StairService service){
-        return new StairProvider(service);
+    public NavigationProvider navigationProvider(NavigationPointService service){
+        return new NavigationProvider(service);
     }
 }

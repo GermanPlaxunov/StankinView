@@ -1,36 +1,34 @@
 package com.proggersofluck.stankinviewservice.builder;
 
-import com.proggersofluck.stankinviewservice.data.entities.Stair;
-import com.proggersofluck.stankinviewservice.provider.StairProvider;
+import com.proggersofluck.stankinviewservice.provider.NavigationProvider;
 import lombok.RequiredArgsConstructor;
 import org.proggersofluck.model.navigation.NavigationPoint;
 import org.proggersofluck.model.navigation.Path;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @RequiredArgsConstructor
 public class PathBuilder {
 
-    private final StairProvider stairProvider;
+    private final NavigationProvider provider;
 
-    public Path buildPath(NavigationPoint start, NavigationPoint destination, int floor){
+    public List<Path> buildPath(NavigationPoint start, NavigationPoint destination) {
+        var result = new ArrayList<Path>();
+        if(start.getFloor() == destination.getFloor()){
+            var floor = start.getFloor();
+            var path = buildSingleFloorPath(start, destination, floor);
+            result.add(floor, path);
+        }
+        return result;
+    }
+
+    private Path buildSingleFloorPath(NavigationPoint start, NavigationPoint destination, int floor){
         //TODO: How to build path in single floor
         return new Path();
     }
 
-    public Map<Integer, Path> buildFullPath(NavigationPoint start, NavigationPoint destination,
-                                            int floorStart, int floorDest) {
-        var result = new HashMap<Integer, Path>();
-        var stairStart = stairProvider.findAnyStairByFloor(floorStart);
-        var stairDest = stairProvider.findAnyStairByFloor(floorDest);
-        result.put(floorStart, getPathToStair(stairStart, start));
-        result.put(floorDest, getPathToStair(stairDest, destination));
-        return result;
-    }
-
-    private Path getPathToStair(Stair stair, NavigationPoint start){
-        var stairPoint = new NavigationPoint(stair.getPositionX(), stair.getPositionY());
+    private Path getPath(NavigationPoint stair, NavigationPoint start){
         return new Path();
     }
 
