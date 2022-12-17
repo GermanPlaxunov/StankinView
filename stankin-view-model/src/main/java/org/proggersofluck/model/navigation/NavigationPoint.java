@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 public class NavigationPoint {
+    private final String id;
     private final float x;
     private final float y;
     private final int floor;

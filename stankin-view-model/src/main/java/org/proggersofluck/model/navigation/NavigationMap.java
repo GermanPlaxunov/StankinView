@@ -7,5 +7,6 @@ import java.util.Map;
 
 @Data
 public class NavigationMap {
-    private Map<NavigationPoint, List<NavigationPoint>> points;
+    private Map<NavigationPoint, List<NavigationPoint>> connections;
+
 }

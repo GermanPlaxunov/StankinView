@@ -1,10 +1,12 @@
 package org.proggersofluck.model.navigation;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 @Data
+@RequiredArgsConstructor
 public class Path {
-    private List<PathLine> path;
+    private final List<PathLine> path;
 }
