@@ -20,6 +20,33 @@
 //------------------ Header END
 
 
+
+//------------------ DESKTOP START
+.desktop {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: linear-gradient(236.15deg, #0FAEF2 19.19%, #18E852 87.15%);
+  mix-blend-mode: normal;
+  img {
+    max-width: 224px;
+    margin-bottom: 35px;
+  }
+  span {
+    text-align: center;
+    max-width: 590px;
+    color: $color-white;
+    @include font('Poppins',normal,600, 36px, 54px)
+  }
+
+}
+//------------------ DESKTOP END
+
+
 //------------------ Footer Menu START
 
 .footer__menu {
@@ -145,7 +172,7 @@
   }
   &__image{
     position: relative;
-    background-color: red;
+    //background-color: red;
     &.scale{
       &0{
         width: 100%;
