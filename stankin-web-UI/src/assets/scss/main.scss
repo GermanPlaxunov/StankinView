@@ -102,7 +102,7 @@
     width: 170px;
     height: 250px;
     flex-grow: 1;
-    background-color: red;
+    //background-color: red;
     border-radius: 12px 12px 0 0;
     overflow: hidden;
     position: relative;
@@ -228,4 +228,89 @@
 }
 
 //------------------ Map Section END
+
+
+//------------------ TEACHER Section START
+
+.teacher{
+  &__content{
+
+  }
+
+  &__search{
+    margin: 12px 0;
+  }
+
+  &__list {
+    background: #FFFFFF;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 16px 15px;
+    margin-bottom: 24px;
+  }
+  &__item{
+    width: 100%;
+    border: 1px solid $gray5;
+    border-radius: 19px;
+    padding: 14px 14px 14px 10px;
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    .title {
+      color: $gray2;
+      @include font("Poppins" sans-serif,normal, 500, 14px, 120%);
+      margin-bottom: 4px;
+    }
+
+    .info {
+      color: $gray3;
+      @include font("Poppins" sans-serif, normal, 400, 12px, 120%);
+      margin-bottom: 12px;
+    }
+    .call {
+      &-label {
+        color: $gray2;
+        @include font("Poppins" sans-serif, normal, 400, 10px, 120%);
+        margin-bottom: 4px;
+      }
+      &-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+        font-size: 10px;
+        color: $blue;
+      }
+      &-icon span{
+        font-size: 12px;
+        margin-right: 7px;
+      }
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        @include font("Poppins" sans-serif, normal, 400, 10px, 120%);
+        color: $blue3;
+      }
+    }
+
+    &-info{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__img {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+  }
+}
+
+
+//------------------ TEACHER Section END
 
