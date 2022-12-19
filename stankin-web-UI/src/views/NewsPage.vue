@@ -1,5 +1,11 @@
 <template>
-  <div class="section-main">
-    <h1>page News</h1>
+  <div class="news__section section-main">
+    <NewsContent/>
   </div>
 </template>
+<script>
+import NewsContent from "@/components/news/NewsContent";
+export default {
+  components: {NewsContent}
+}
+</script>

@@ -23,6 +23,11 @@ const routes = [
     path: '/timetable',
     name: 'Timetable',
     component: () => import('@/views/TimetablePage.vue')
+  },
+  {
+    path: '/news/:id',
+    name: 'News',
+    component: () => import('@/views/NewsPage.vue')
   }
 
 ]

@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <span v-if="back" @click="$router.back()" class="material-icons cursor-pointer">chevron_left</span>
+    <span v-if="my_route.name === 'News'" @click="$router.back()" class="material-icons cursor-pointer">chevron_left</span>
     <div class="header__title">
       {{my_route.name}}
     </div>
