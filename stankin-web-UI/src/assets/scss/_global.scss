@@ -1,0 +1,125 @@
+*, *::after,*::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    height: 20px;
+    background-color: $gray4;
+  }
+  &::-webkit-scrollbar-track{
+    background-color: white;
+  }
+}
+body{
+  background-color: $color_back;
+  min-height: 100vh;
+}
+
+.section-main {
+  width: 100%;
+  height: calc(100vh - (54px  + 72px));
+  position: fixed;
+  top: $header_height;
+  left: 0;
+  right: 0;
+  padding: 0 15px;
+  overflow-y: auto;
+  background-color: transparent;
+}
+
+.text_header{
+  @include font('Petrona',normal,600,28px,150%)
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+
+
+
+// form elements
+
+.form{
+  &__control {
+    position: relative;
+    .text {
+      color: $gray2;
+      @include font('Poppins',normal,400,14px,150%);
+      margin-bottom: 2px;
+    }
+    .control__input {
+      width: 100%;
+      border-radius: 14px;
+      padding: 7px 7px 7px 15px;
+      border: 1px solid #ededed;
+      outline: none;
+      color: $gray2;
+      @include font('Poppins', normal, 400, 16px, 24px);
+      &::placeholder {
+        color: $gray4;
+      }
+      &:disabled{
+        color: $gray2;
+        background: #f2f2f2;
+      }
+      &~.icon-input {
+        position: absolute;
+        right: 15px;
+        bottom: 11px;
+        cursor: pointer;
+      }
+      &.error{
+        border-color: red;
+        &::placeholder{
+          color: red;
+        }
+      }
+    }
+    .control__textarea {
+      width: 100%;
+      height: 150px;
+      border-radius: 14px;
+      padding: 7px 15px;
+      border: 1px solid $gray5;
+      outline: none;
+      color: $gray2;
+      @include font('Poppins', normal, 400, 16px, 24px);
+      &::placeholder {
+        color: $gray4;
+      }
+      &:disabled{
+        color: $gray2;
+        background: #f2f2f2;
+      }
+      &~.icon-input {
+        position: absolute;
+        right: 15px;
+        bottom: 11px;
+        cursor: pointer;
+      }
+      &.error{
+        border-color: red;
+        &::placeholder{
+          color: red;
+        }
+      }
+    }
+
+    &-md{
+      .control__input{
+        padding: 10px 15px;
+      }
+      .form__select{
+        padding: 10px 39px 10px 15px;
+      }
+    }
+  }
+}

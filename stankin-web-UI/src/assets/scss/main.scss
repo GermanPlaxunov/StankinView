@@ -1,0 +1,204 @@
+//------------------ Header START
+
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  color: $color_primary;
+  padding: 6px 12px;
+  height: $header_height;
+  background: $color_white;
+  box-shadow: $effect_header;
+  @include font('Poppins', normal, 500, 28px, 150%);
+}
+
+//------------------ Header END
+
+
+//------------------ Footer Menu START
+
+.footer__menu {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  color: $color_primary;
+  padding: 6px 27px;
+  height: $menu_height;
+  background: $color_white;
+  box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 20px 20px 0 0;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $gray4;
+    cursor: pointer;
+    padding: 0;
+    gap: 2px;
+    transition: all 0.3s ease;
+    @include textH6;
+
+    &.active, &:hover {
+      color: $color_primary;
+    }
+  }
+}
+
+//------------------ Footer Menu END
+
+
+//------------------ Home Section START
+
+.home {
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  &__card {
+    width: 170px;
+    height: 250px;
+    flex-grow: 1;
+    background-color: red;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 8px 6px;
+      height: 60px;
+      text-align: center;
+      background: rgba(38, 38, 38, 0.85);
+      color: $color_white;
+      @include font('Poppins', normal, 400, 11px, 16px)
+    }
+  }
+}
+
+//------------------ Home Section END
+
+
+
+//------------------ Map Section START
+
+.map{
+  &__content {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+    margin-top: 30px;
+    position: relative;
+    background: $color_white;
+    &::-webkit-scrollbar{
+      height: 0;
+      width: 0;
+    }
+    .scale {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &__item {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        background: $color-white;
+        border: 1px solid $gray4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+    }
+  }
+  &__image{
+    position: relative;
+    background-color: red;
+    &.scale{
+      &0{
+        width: 100%;
+      }
+      &50{
+        width: 150%;
+      }
+      &100{
+        width: 200%;
+      }
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparent;
+    }
+  }
+  &__form {
+    display: flex;
+    padding-bottom: 16px;
+    justify-content: space-between;
+  }
+  &__floor {
+    width: 192px;
+    flex-shrink: 0;
+    margin-left: 7px;
+    padding: 6px;
+    height: 82px;
+    background: $color_white;
+
+    span {
+      @include font('Poppins', normal, 400, 14px, 150%);
+      color: $gray2;
+      padding-left: 20px;
+      margin-bottom: 2px;
+    }
+  }
+  &__inputs{
+    padding-top: 20px;
+    .item{
+      margin-bottom: 10px;
+    }
+  }
+}
+
+//------------------ Map Section END
+
