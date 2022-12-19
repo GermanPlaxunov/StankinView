@@ -15,6 +15,9 @@
   background: $color_white;
   box-shadow: $effect_header;
   @include font('Poppins', normal, 500, 28px, 150%);
+  &__title{
+    user-select: none;
+  }
 }
 
 //------------------ Header END
@@ -96,6 +99,9 @@
     justify-content: space-between;
     gap: 20px;
     margin-top: 20px;
+    @media (max-width: 400px) {
+      gap: 10px;
+    }
   }
 
   &__card {
@@ -106,6 +112,11 @@
     border-radius: 12px 12px 0 0;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: 400px) {
+      width: 156px;
+      height: 210px;
+    }
 
     img {
       width: 100%;
